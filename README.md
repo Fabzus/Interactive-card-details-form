@@ -22,7 +22,7 @@ This is a solution to the [Interactive card details form](https://www.frontendme
 ### Links
 
 - Solution URL: [github](https://github.com/Fabzus/Interactive-card-details-form)
-- Live Site URL: [github](https://fabzus.github.io/Tip-calculator-app/)
+- Live Site URL: [github](https://fabzus.github.io/Interactive-card-details-form/)
 
 ## My process
 
