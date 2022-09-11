@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+    <main>
+      <div class="virtual-container">
+        <div class="virtual front">
+          <img src="./images/card-logo.svg" alt="card_logo" />
+          <p id="virtual-number">1234 5678 9123 0000</p>
+          <div class="virtual-expiration">           
+            <p id="virtual-name">Jane Appleseed</p>
+            <p id="virtual-expiration">  
+            <s id="virtual-mm">10</s>/<s id="virtual-yy">22</s></p>
+          </div>
+        </div>
+        <div class="virtual back">
+          <p id="virtual-cvc">123</p>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form">
+          <div class="form-name">
+            <label for="card-name">
+              <span>CARDHOLDER NAME</span>
+            </label>
+            <div class="input">
+              <input
+              
+              autocomplete="off"
+              onkeyup="appendInput('card-name','virtual-name','nameErr')"
+              placeholder="e.g Jane Appleseed"
+                name="card-name"
+                type="text"
+                id="card-name"
+                data-maxlength="27"
+                required
+                oninput="this.value=this.value.slice(0,this.dataset.maxlength)"
+              />
+            </div>
+            <p class="err" id="nameErr"> &#8203 </p>
+          </div>
+          <div class="form-number">
+            <label for="card-name">
+              <span>CARD NUMBER</span>
+            </label>
+            <div class="input">
+              <input
+              autocomplete="off"
+              placeholder="e.g. 1234 5678 9123 0000"
+                name="card-number"
+                type="text"
+                id="credit-card"
+                required
+              />
+            </div>
+            <p class="err" id="numberErr"> &#8203 </p>
+          </div>
+
+          <div class="form-small-inputs">
+            <div class="form-expiration">
+              <span>EXP. DATE (MM/YY)</span>
+              <div class="expiration-mm-yy">
+                <div class="form-mm">
+                  <div class="input">
+                    <input
+                    autocomplete="off"
+                    onkeypress="appendInput('card-mm','virtual-mm','mmyyErr')"
+                    placeholder="MM"
+                      name="card-mm"
+                      type="number"
+                      id="card-mm"
+                      data-maxlength="2"
+                      required
+                      oninput="this.value=this.value.slice(0,this.dataset.maxlength)"
+                    />
+                  </div>
+              </div>
+
+              <div class="form-yy">
+                <div class="input">
+                  <input
+                  autocomplete="off"
+                  onkeypress="appendInput('card-yy','virtual-yy','mmyyErr')"
+                  placeholder="YY"
+                    name="card-yy"
+                    type="number"
+                    id="card-yy"
+                    data-maxlength="2"
+                    required
+                    oninput="this.value=this.value.slice(0,this.dataset.maxlength)"
+                  />
+                </div>
+            </div>
+
+
+              </div>
+              <p class="err" id="mmyyErr"> &#8203 </p>
+
+
+            </div>
+            <div class="form-cvc">
+              <label for="card-cvc">
+                <span>CVC</span>
+              </label>
+              <div class="input">
+                <input 
+                autocomplete="off"
+                onkeypress="appendInput('card-cvc','virtual-cvc','cvcErr')"
+                placeholder="e.g. 123"
+                  name="card-cvc"
+                  type="number"
+                  id="card-cvc"
+                  data-maxlength="4"
+                  required
+                  oninput="this.value=this.value.slice(0,this.dataset.maxlength)"
+                />
+              </div>
+              <p class="err" id="cvcErr"> &#8203 Can't be blank </p>
+          </div>
+          
+        </div>
+        <div class="button">Confirm</div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
